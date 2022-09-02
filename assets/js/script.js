@@ -1,11 +1,11 @@
 
-//selector variable
-var inputval = document.querySelector('#cityinput')
-var btn = document.querySelector('#add');
-var city = document.querySelector('#cityoutput')
-var descrip = document.querySelector('#description')
-var temp = document.querySelector('#temp')
-var wind = document.querySelector('#wind')
+//selector variables
+var inputval = document.getElementById('cityinput')
+var btn = document.getElementById('add');
+var city = document.getElementById('cityoutput')
+var description = document.getElementById('description')
+var temp = document.getElementById('temp')
+var wind = document.getElementById('wind')
 
 
 // Get your own free OWM API key at https://www.openweathermap.org/appid - please do not re-use mine!
@@ -22,16 +22,16 @@ function convertion(val){
          //.then(data => console.log(data))
         .then(data => {
             var nameval = data['name']
-            var descrip = data['weather']['0']['description']
+            var description = data['weather']['0']['description']
             var tempature = data['main']['temp']
             var wndspd = data['wind']['speed']
 
             city.innerHTML=`City: ${nameval}`
             temp.innerHTML = `Temperature: ${ convertion(tempature)} C`
-            description.innerHTML = `Conditions: ${descrip}`
+            description.innerHTML = `Conditions: ${description}`
             wind.innerHTML = `Wind Speed: ${wndspd} km/h`
 
         })
-        .catch(err => alert('You entered Wrong city name'))
+        .catch(err => alert('You entered Wrong city/Country name'))
     })
 
