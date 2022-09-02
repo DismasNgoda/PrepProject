@@ -8,18 +8,25 @@ var temp = document.getElementById('temp')
 var wind = document.getElementById('wind')
 
 
-// Get your own free OWM API key at https://www.openweathermap.org/appid - please do not re-use mine!
-// You don't need an API key for this to work at the moment, but this will change eventually.
+
 apik = "3045dd712ffe6e702e3245525ac7fa38"
 //kelvin to celcious
 function convertion(val){
     return (val - 273).toFixed(2)
 }
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '2494d3735bmsh46eb9c91e8d6e69p154e13jsn76a7cc498b0d',
+		'X-RapidAPI-Host': 'yahoo-weather5.p.rapidapi.com'
+	}
+};
+
 //fetch
     btn.addEventListener('click', function(){
-        fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputval.value+'&appid='+apik)
+        fetch('https://yahoo-weather5.p.rapidapi.com/weather?location=sunnyvale&format=json&u=f', options)
         .then(res => res.json())
-         //.then(data => console.log(data))
         .then(data => {
             var nameval = data['name']
             var description = data['weather']['0']['description']
