@@ -3,7 +3,6 @@
 const inputval = document.getElementById('cityinput')
 const btn = document.getElementById('add');
 const city = document.getElementById('cityoutput')
-const description = document.getElementById('description')
 const temp = document.getElementById('temp')
 const wind = document.getElementById('wind')
 const add = document.getElementById('add')
@@ -20,13 +19,11 @@ function convertion(val){
         .then(res => res.json())
         .then(data => {
             var nameval = data['name']
-            var description = data['weather']['0']['description']
             var tempature = data['main']['temp']
             var wndspd = data['wind']['speed']
 
             city.innerHTML=`City: ${nameval}`
             temp.innerHTML = `Temperature: ${ convertion(tempature)} C`
-            description.innerHTML = `Conditions: ${description}`
             wind.innerHTML = `Wind Speed: ${wndspd} km/h`
 
         })
