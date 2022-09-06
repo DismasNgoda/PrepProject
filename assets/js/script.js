@@ -10,22 +10,16 @@ var wind = document.getElementById('wind')
 
 
 apik = "3045dd712ffe6e702e3245525ac7fa38"
-//kelvin to celcious
+//Converting Faenheight to degrees Celcius
 function convertion(val){
     return (val - 273).toFixed(2)
 }
 
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '2494d3735bmsh46eb9c91e8d6e69p154e13jsn76a7cc498b0d',
-		'X-RapidAPI-Host': 'yahoo-weather5.p.rapidapi.com'
-	}
-};
+
 
 //fetch
     btn.addEventListener('click', function(){
-        fetch('https://yahoo-weather5.p.rapidapi.com/weather?location=sunnyvale&format=json&u=f', options)
+        fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputval.value+'&appid='+apik)
         .then(res => res.json())
         .then(data => {
             var nameval = data['name']
@@ -39,6 +33,6 @@ const options = {
             wind.innerHTML = `Wind Speed: ${wndspd} km/h`
 
         })
-        .catch(err => alert('You entered Wrong city/Country name'))
+        .catch(err => alert('There are no data for your given Country/City. Please try with a different search'))
     })
 
