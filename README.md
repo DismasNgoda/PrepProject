@@ -13,7 +13,8 @@ Description: The project is a depiction of a weather app platform. It takes in u
 
 Installation Requirements: Accessing the project requires a user to have the following: Any computing device with access to Internet. Reliable Internet connection.
 
-Technology Used: HTML5 for structuring the page. CSS for page styling, including adjusting image sizes, Bootstrap framework for styling, weather API from https://rapidapi.com/category/Weather
+Technology Used: HTML5 for structuring the page. CSS for page styling, including adjusting image sizes, Bootstrap framework for styling, weather API from openweathermap.org
+Live Link: https://dismasngoda.github.io/PrepProject/
 
 Reference Materialize CSS
 
