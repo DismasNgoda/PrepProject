@@ -22,7 +22,7 @@ function convertion(val){
             let wndspd = data['wind']['speed']
 
             // description.innerHTML = `Your Search Results: ${description}`
-            city.innerHTML=`City: ${nameval}`
+            city.innerHTML=`City/Country: ${nameval}`
             temp.innerHTML = `Temperature: ${ convertion(tempature)} C`
             wind.innerHTML = `Wind Speed: ${wndspd} km/h`
 
@@ -39,3 +39,11 @@ btn.addEventListener('mouseover', (event) => {
           event.target.style.color = "";
         }, 1500);
       }, false);
+
+      
+      inputval.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("btn-add").click();
+        }
+      });
